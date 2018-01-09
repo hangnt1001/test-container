@@ -3,6 +3,6 @@ steps:
     args: ["install", "github.com/hangnt1001/test-container"]
     env: ["PROJECT_ROOT=github.com/hangnt1001/test-container"]
   - name: "gcr.io/cloud-builders/docker"
-    args: ["build", "-t", "gcr.io/glue-test/gcp-cd-codelab:$REVISION_ID", "-f", "Dockerfile", "."]
+    args: ["build", "-t", "gcr.io/glue-test/test-container:$REVISION_ID", "-f", "Dockerfile", "."]
 images:
-  - "gcr.io/glue-test/gcp-cd-codelab:$REVISION_ID"
+  - "gcr.io/glue-test/test-container:$REVISION_ID"
