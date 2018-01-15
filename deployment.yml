@@ -19,3 +19,16 @@ spec:
         image: gcr.io/glue-test/test-container:1b4766678494c59898ec1edacdeb9b26c4bb1147
         ports:
         - containerPort: 80
+apiVersion: v1
+kind: Service
+metadata:
+  name: appName
+  labels:
+    service: appName
+spec:
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  selector:
+    service: appName
