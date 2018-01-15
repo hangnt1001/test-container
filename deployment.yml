@@ -1,0 +1,21 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: appName-deployment
+  labels:
+    app: appName
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: appName
+  template:
+    metadata:
+      labels:
+        app: appName
+    spec:
+      containers:
+      - name: appName
+        image: gcr.io/glue-test/test-container:1b4766678494c59898ec1edacdeb9b26c4bb1147
+        ports:
+        - containerPort: 80
